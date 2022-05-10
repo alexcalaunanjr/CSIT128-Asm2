@@ -6,16 +6,16 @@
                 <xsd:element name="weather" minOccurs="0" maxOccurs="unbounded">
                     <xsd:complexType>
                         <xsd:sequence>
-                            <xsd:element name="year" type="xsd:string"/>
-                            <xsd:element name="month" type="xsd:string"/>
-                            <xsd:element name="date" type="xsd:string"/>
+                            <xsd:element name="year" type="xsd:integer"/>
+                            <xsd:element name="month" type="xsd:integer"/>
+                            <xsd:element name="date" type="xsd:integer"/>
                             <xsd:element name="dayOfWeek" type="xsd:string"/>
                             <xsd:element name="overall" type="xsd:string"/>
                             <xsd:element name="overallCode" type="xsd:string"/>
-                            <xsd:element name="highest" type="xsd:string"/>
-                            <xsd:element name="lowest" type="xsd:string"/>
+                            <xsd:element name="highest" type="xsd:integer"/>
+                            <xsd:element name="lowest" type="xsd:integer"/>
                         </xsd:sequence>
-                        <xsd:attribute name="yyyymmdd" type="xsd:string"/>
+                        <xsd:attribute name="yyyymmdd" type="xsd:date"/>
                     </xsd:complexType>
                 </xsd:element>
             </xsd:sequence>
