@@ -12,7 +12,7 @@
             </head>
             <body>
                 <!-- Create table of weather data info -->
-                <table border="1">
+                <table border="1" empty-cells="show">
                     <tr name="tableHeading" align="center" bgcolor="orange">
                         <th>Date</th>
                         <th>Mon</th>
@@ -31,65 +31,59 @@
                         <tr align="center">                                
                             <!-- e.g., Date looks like this: 01 Jun-->
                             <td align="center" bgcolor="orange"><xsl:value-of select="concat(date,' ')" />   
-                            <!-- Convert month number to month name -->
-                            <xsl:choose>
-                                <xsl:when test="month='1'">Jan</xsl:when>
-                                <xsl:when test="month='2'">Feb</xsl:when>
-                                <xsl:when test="month='3'">Mar</xsl:when>
-                                <xsl:when test="month='4'">Apr</xsl:when>
-                                <xsl:when test="month='5'">May</xsl:when>
-                                <xsl:when test="month='6'">Jun</xsl:when>
-                                <xsl:when test="month='7'">Jul</xsl:when>
-                                <xsl:when test="month='8'">Aug</xsl:when>
-                                <xsl:when test="month='9'">Sep</xsl:when>
-                                <xsl:when test="month='10'">Oct</xsl:when>
-                                <xsl:when test="month='11'">Nov</xsl:when>
-                                <xsl:when test="month='12'">Dec</xsl:when>
-                            </xsl:choose>
+                                <!-- Convert month number to month name -->
+                                <xsl:choose>
+                                    <xsl:when test="month='1'">Jan</xsl:when>
+                                    <xsl:when test="month='2'">Feb</xsl:when>
+                                    <xsl:when test="month='3'">Mar</xsl:when>
+                                    <xsl:when test="month='4'">Apr</xsl:when>
+                                    <xsl:when test="month='5'">May</xsl:when>
+                                    <xsl:when test="month='6'">Jun</xsl:when>
+                                    <xsl:when test="month='7'">Jul</xsl:when>
+                                    <xsl:when test="month='8'">Aug</xsl:when>
+                                    <xsl:when test="month='9'">Sep</xsl:when>
+                                    <xsl:when test="month='10'">Oct</xsl:when>
+                                    <xsl:when test="month='11'">Nov</xsl:when>
+                                    <xsl:when test="month='12'">Dec</xsl:when>
+                                </xsl:choose>
                             </td>
-                        </tr>   <!-- end of date row -->
-
-                        <tr>
-                            <xsl:when test="dayOfWeek='Mon'">
-                            <!-- Display column in first column of table --> 
-                            <td align="center" bgcolor="yellow"><xsl:value-of select="highest" /></td>
                             
-                            <!-- Display column in second column of table -->
-                            <td align="center" bgcolor="yellow"><xsl:value-of select="lowest" /></td>
-                            
+                            <td align="center">
+                                <!-- When dayOfWeek is Mon, print the following -->
+                                <xsl:when test="dayOfWeek='Mon'">
+                                    <!-- Print lowest to highest temperature -->
+                                    <xsl:value-of select="lowest" />&deg; 
+                                    <xsl:text> - </xsl:text>
+                                    <xsl:value-of select="highest" />&deg;
 
+                                    <!-- Line break before image -->
+                                    <xsl:text>&#xa;</xsl:text>
 
-                        </tr>
+                                    <!-- Print weather image -->
+                                    <img>
+                                        <xsl:attribute name="src">
+                                          <xsl:text>images/</xsl:text>
+                                          <xsl:value-of select="@overallCode"/>
+                                          <xsl:text>.png</xsl:text>
+                                        </xsl:attribute>
+                      
+                                        <xsl:attribute name="width">
+                                          <xsl:text>30px</xsl:text>
+                                        </xsl:attribute>
+                                     </img>
 
-                        <!-- Display different weather data depending on overallCode -->
-                        <xsl:choose>
-                            <xsl:when test="overallCode='sunny'">
-                                    <!-- Display temperature lowest-highest and corresponding image and description -->
-                                <td align="center"><xsl:value-of select="lowest" />&deg; - <xsl:value-of select="highest" />&deg;</td>
-                                <td align="center"><img src="sunny.png" alt="sunny" /></td>
-                                <td align="center" bgcolor="red"><xsl:value-of select="overall" /></td>
-                            </xsl:when>
-                            <xsl:when test="overallCode='partlySunny'">
-                                <td align="center"><xsl:value-of select="lowest" />&deg; - <xsl:value-of select="highest" />&deg;</td>
-                                <td align="center"><img src="partlySunny.png" alt="partlySunny" /></td>
-                                <td align="center" bgcolor="purple"><xsl:value-of select="overall" /></td>
-                            </xsl:when>
-                            <xsl:when test="overallCode='cloudy'">
-                                <td align="center"><xsl:value-of select="lowest" />&deg; - <xsl:value-of select="highest" />&deg;</td>
-                                <td align="center"><img src="cloudy.png" alt="cloudy" /></td>
-                                <td align="center" bgcolor="blue"><xsl:value-of select="overall" /></td>
-                            </xsl:when>
-                            <xsl:when test="overallCode='rain'">
-                                <td align="center"><xsl:value-of select="lowest" />&deg; - <xsl:value-of select="highest" />&deg;</td>
-                                <td align="center"><img src="rain.png" alt="rain" /></td>
-                                <td align="center" bgcolor="green"><xsl:value-of select="overall" /></td>
-                            </xsl:when>
-                            <xsl:when test="overallCode='thunderstorm'">
-                                <td align="center"><xsl:value-of select="lowest" />&deg; - <xsl:value-of select="highest" />&deg;</td>
-                                <td align="center"><img src="thunderstorm.png" alt="thunderstorm" /></td>
-                                <td align="center" bgcolor="green"><xsl:value-of select="overall" /></td>
-                            </xsl:when>
-                        </xsl:choose>
+                                    <!-- Line break after image -->
+                                     <xsl:text>&#xa;</xsl:text>
+
+                                    <!-- Print overall weather description -->
+                                     <xsl:value-of select="@overall"/>
+                                </xsl:when>
+                                <!-- When dayOfWeek is not Mon, print nothing -->
+                                <xsl:otherwise>
+                                    <xsl:text></xsl:text>
+                                </xsl:otherwise>
+                            </td>
+                        </tr>   <!-- end of one row in the table -->
                     </xsl:for-each>
                 </table>
             </body>
