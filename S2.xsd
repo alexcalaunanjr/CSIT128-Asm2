@@ -15,10 +15,11 @@
                             <xsd:element name="highest" type="xsd:integer"/>
                             <xsd:element name="lowest" type="xsd:integer"/>
                         </xsd:sequence>
-                        <xsd:attribute name="yyyymmdd" type="xsd:date"/>
+                        <xsd:attribute name="yyyymmdd" type="xsd:integer"/>
                     </xsd:complexType>
                 </xsd:element>
             </xsd:sequence>
+            <xsd:attribute name="queryTime" type="xsd:string"/>
             <xsd:attribute name="queryLocation" type="xsd:string"/>
         </xsd:complexType>
     </xsd:element>
