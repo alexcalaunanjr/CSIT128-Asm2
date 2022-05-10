@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<forecast queryTime="28/04/2022 10:45 AM" queryLocation="Singapore">
+<?xml-stylesheet type="text/xsl" href="S2.xsl" version="1.0" encoding="UTF-8" ?>
+<forecast queryTime="28/04/2022 10:45 AM" queryLocation="Singapore"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="S2.xsd">
   <weather yyyymmdd="20220411">
     <year>2022</year>	
     <month>4</month>
