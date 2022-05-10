@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A2-G2T01-7559161,7559471,7536070(Alex, Deon, Dylan)</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .partOne td {
+            padding: 5px;
+        }
+        .partTwo td {
+            padding: 5px;
+        }
+        .partTwo table {
+            width: 45%;
+            border-collapse: collapse;
+        }
+
+        .partTwo table tr td a {
+            display: block;
+            text-decoration: none;
+        }
+
+        .partTwo table tr td.blue {
+            background-color: #dbebf3;
+            font-weight: bold;
+            padding: 15px;
+        }
+
+        .partTwo table tr td.score {
+            font-weight: bold;
+            background-color: #fff2cc;
+            font-size: 120%;
+        }
+
+        .partTwo table th.heading {
+            background-color: #f7caac;
+            font-weight: bold;
+            font-size: 190%;
+            padding: 10px;
+        }
+
+        .partTwo table tr.button {
+            background-color: #99ff99;
+        }
+
+        .partTwo span.special {
+            font-weight: bold;
+            color: red;
+            font-size: 150%;
+        }
+
+        .partTwo table tr.button td {
+            padding: 10px;
+        }
+
+        .partTwo table tr td input.start {
+            margin-right: 95px
+        }
+
+        .partTwo table tr td input.stop {
+            margin-left: 95px
+        }
+
+        .partTwo table tr td.a1 {
+            color: blue;
+            font-size: 150%;
+        }
+
+        .partTwo table tr td.a2 {
+            color: #ff4500;
+            font-size: 150%;
+        }
+
+        .partTwo table tr td.a3 {
+            color: #ff1493;
+            font-size: 150%;
+        }
+
+    </style>
+
+    <script>
+        var timer; // global variable for setInterval
+
+        function alphabetMake() {
+            var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U",
+                "V", "W", "X", "Y", "Z"];
+
+            // change the alphabet every one second
+            var a1 = alphabet[Math.floor(Math.random() * 26)];
+            document.getElementById("a1").innerHTML = a1;
+
+            var a2 = alphabet[Math.floor(Math.random() * 26)];
+            do {
+                a2 = alphabet[Math.floor(Math.random() * 26)];
+            } while (a2 === a1);
+            document.getElementById("a2").innerHTML = a2;
+
+            var a3 = alphabet[Math.floor(Math.random() * 26)];
+            do {
+                a3 = alphabet[Math.floor(Math.random() * 26)];
+            } while (a3 === a1 || a3 === a2);
+            document.getElementById("a3").innerHTML = a3;
+        }
+
+        function start() {
+                document.getElementById("a1").setAttribute("onclick", "checkAlphabet1()");
+                document.getElementById("a2").setAttribute("onclick", "checkAlphabet2()");
+                document.getElementById("a3").setAttribute("onclick", "checkAlphabet3()");
+                document.getElementById("count").innerHTML = "0";
+                document.getElementById("start").disabled = true;
+                document.getElementById("opt").disabled = true;
+
+                var i = 0;
+                // Use alphabetMake() function to change the alphabet every one second until user presses stop button
+
+                alphabetMake();
+                timer = setInterval(alphabetMake, 1000);
+
+                if (document.getElementById("stop").onclick === true) {
+                    stop();
+                }
+        }
+
+        function stop() {
+            clearInterval(timer);
+            document.getElementById("start").disabled = false;
+            document.getElementById("opt").disabled = false;
+            document.getElementById("a1").setAttribute("onclick", "");
+            document.getElementById("a2").setAttribute("onclick", "");
+            document.getElementById("a3").setAttribute("onclick", "");
+        }
+
+        function checkAlphabet1() {
+            var a1 = document.getElementById("a1").innerHTML;
+            var opt = document.getElementById("opt").value;
+            var val = document.getElementById("count").innerHTML;
+            var count = parseInt(val);
+
+            if (a1 === opt) {
+                count = count + 4;
+                document.getElementById("count").innerHTML = count;
+            } else {
+                count = count - 3;
+                document.getElementById("count").innerHTML = count;
+            }
+        }
+
+        function checkAlphabet2() {
+            var a2 = document.getElementById("a2").innerHTML;
+            var opt = document.getElementById("opt").value;
+            var val = document.getElementById("count").innerHTML;
+            var count = parseInt(val);
+
+            if (a2 === opt) {
+                count = count + 4;
+                document.getElementById("count").innerHTML = count;
+            } else {
+                count = count - 3;
+                document.getElementById("count").innerHTML = count;
+            }
+        }
+
+        function checkAlphabet3() {
+            var a3 = document.getElementById("a3").innerHTML;
+            var opt = document.getElementById("opt").value;
+            var val = document.getElementById("count").innerHTML;
+            var count = parseInt(val);
+
+            if (a3 === opt) {
+                count = count + 4;
+                document.getElementById("count").innerHTML = count;
+            } else {
+                count = count - 3;
+                document.getElementById("count").innerHTML = count;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+<div class="partOne">
+    <h2>Part 1: A table reflecting group members' information</h2>
+    <table border="1">
+        <tr bgcolor="#deeaf6">
+            <th colspan="3"><h3>CSIT128: Assignment 2</h3></th>
+            <th><h3>Group G2T01</h3></th>
+        </tr>
+        <tr>
+            <td rowspan="3" width="18%">Student Number / <br> Name / Email</td>
+            <td>7559161</td>
+            <td><p>Calaunan Alexander Jr Sumampong</p></td>
+            <td><p>calaunan003@mymail.sim.edu.sg</p></td>
+        </tr>
+        <tr>
+            <td><p>7559471</p></td>
+            <td><p>Cham Hui Ern Deon</p></td>
+            <td><p>hedcham001@mymail.sim.edu.sg</p></td>
+        </tr>
+        <tr>
+            <td><p>7536070</p></td>
+            <td><p>Tang Jun Hua Dylan</p></td>
+            <td><p>jhdtang001@mymail.sim.edu.sg</p></td>
+        </tr>
+    </table>
+</div>
+
+<br><hr><br>
+
+<div class="partTwo">
+<table border="1px solid">
+    <th colspan="3" class="heading">Part 2: Game</th>
+    <tr>
+        <td width="30%" class="blue">Your chosen alphabet:</td>
+        <td width="30%" align="center" class="blue">
+        <select id="opt">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="G">G</option>
+            <option value="H">H</option>
+            <option value="I">I</option>
+            <option value="J">J</option>
+            <option value="K">K</option>
+            <option value="L">L</option>
+            <option value="M">M</option>
+            <option value="N">N</option>
+            <option value="O">O</option>
+            <option value="P">P</option>
+            <option value="Q">Q</option>
+            <option value="R">R</option>
+            <option value="S">S</option>
+            <option value="T">T</option>
+            <option value="U">U</option>
+            <option value="V">V</option>
+            <option value="W">W</option>
+            <option value="X">X</option>
+            <option value="Y">Y</option>
+            <option value="Z">Z</option>
+        </select></td>
+        <td width="30%" align="center" class="score">Current Score: <span class="special" id="count">0</span></td>
+    </tr>
+    <tr>
+    <tr class="button">
+        <td colspan="3" align="center" >
+            <input type="button" id="start" class="start" value="Start" onclick="start()">
+            <input type="button" id="stop" class="stop" value="Stop" onclick="stop()">
+        </td>
+    </tr>
+    <tr>
+        <td id="a1" class="a1" height="100px" align="center"><1<sup>st</sup> Alphabet></td>
+        <td id="a2" class="a2" height="100px" align="center"><2<sup>nd</sup> Alphabet></td>
+        <td id="a3" class="a3" height="100px" align="center"><3<sup>rd</sup> Alphabet></td>
+    </tr>
+</table>
+</div><br>
+
+</body>
+</html>
+
