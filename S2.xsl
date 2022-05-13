@@ -50,12 +50,12 @@
 
               <!-- Display weather data if dayOfWeek = "Mon" -->
               <xsl:if test="dayOfWeek='Mon'">
-                <td align="center" width="100px" height="100px">
-                  <!-- Print lowest to highest temperature -->
+                <td align="center" width="110px" height="110px">
+                  <!-- Print highest to lowest temperature -->
                   <p>
-                    <xsl:value-of select="lowest" />
-                    <xsl:text>° - </xsl:text>
                     <xsl:value-of select="highest" />
+                    <xsl:text>° - </xsl:text>
+                    <xsl:value-of select="lowest" />
                     <xsl:text>°</xsl:text>
                   </p>
   
@@ -63,7 +63,7 @@
                   <img>
                     <xsl:attribute name="src">
                       <xsl:text>images/</xsl:text>
-                      <xsl:value-of select="@overallCode"/>
+                      <xsl:value-of select="overallCode"/>
                       <xsl:text>.png</xsl:text>
                     </xsl:attribute>
                   </img>
@@ -71,27 +71,27 @@
                   <!-- Print weather description -->
                   <p>
                     <xsl:choose>
-                      <xsl:when test="@overallCode='cloudy'">
+                      <xsl:when test="overallCode='cloudy'">
                         <span style="color:blue">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:when test="@overallCode='thunderstorm'">
+                      <xsl:when test="overallCode='thunderstorm'">
                         <span style="color:green">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:when test="@overallCode='rain'">
+                      <xsl:when test="overallCode='rain'">
                         <span style="color:green">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:when test="@overallCode='sunny'">
+                      <xsl:when test="overallCode='sunny'">
                         <span style="color:red">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:otherwise test="@overallCode='partlySunny'">
+                      <xsl:otherwise test="overallCode='partlySunny'">
                         <span style="color:purple">
                           <xsl:value-of select="overall"/>
                         </span>
@@ -102,18 +102,18 @@
               </xsl:if>
               <!-- else display empty cell -->
               <xsl:if test="dayOfWeek!='Mon'">
-                <td align="center" bgcolor="white"></td>
+                <td align="center" width="110px" height="110px"></td>
               </xsl:if>
 
 
               <!-- Display weather data if dayOfWeek = "Tue" -->
               <xsl:if test="dayOfWeek='Tue'">
-                <td align="center" width="100px" height="100px">
-                  <!-- Print lowest to highest temperature -->
+                <td align="center" width="110px" height="110px">
+                  <!-- Print highest to lowest temperature -->
                   <p>
-                    <xsl:value-of select="lowest" />
-                    <xsl:text>° - </xsl:text>
                     <xsl:value-of select="highest" />
+                    <xsl:text>° - </xsl:text>
+                    <xsl:value-of select="lowest" />
                     <xsl:text>°</xsl:text>
                   </p>
   
@@ -121,7 +121,7 @@
                   <img>
                     <xsl:attribute name="src">
                       <xsl:text>images/</xsl:text>
-                      <xsl:value-of select="@overallCode"/>
+                      <xsl:value-of select="overallCode"/>
                       <xsl:text>.png</xsl:text>
                     </xsl:attribute>
                   </img>
@@ -129,27 +129,27 @@
                   <!-- Print weather description -->
                   <p>
                     <xsl:choose>
-                      <xsl:when test="@overallCode='cloudy'">
+                      <xsl:when test="overallCode='cloudy'">
                         <span style="color:blue">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:when test="@overallCode='thunderstorm'">
+                      <xsl:when test="overallCode='thunderstorm'">
                         <span style="color:green">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:when test="@overallCode='rain'">
+                      <xsl:when test="overallCode='rain'">
                         <span style="color:green">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:when test="@overallCode='sunny'">
+                      <xsl:when test="overallCode='sunny'">
                         <span style="color:red">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:otherwise test="@overallCode='partlySunny'">
+                      <xsl:otherwise test="overallCode='partlySunny'">
                         <span style="color:purple">
                           <xsl:value-of select="overall"/>
                         </span>
@@ -165,12 +165,12 @@
 
               <!-- Display weather data if dayOfWeek = "Wed" -->
               <xsl:if test="dayOfWeek='Wed'">
-                <td align="center" width="100px" height="100px">
-                  <!-- Print lowest to highest temperature -->
+                <td align="center" width="110px" height="110px">
+                  <!-- Print highest to lowest temperature -->
                   <p>
-                    <xsl:value-of select="lowest" />
-                    <xsl:text>° - </xsl:text>
                     <xsl:value-of select="highest" />
+                    <xsl:text>° - </xsl:text>
+                    <xsl:value-of select="lowest" />
                     <xsl:text>°</xsl:text>
                   </p>
   
@@ -178,7 +178,7 @@
                   <img>
                     <xsl:attribute name="src">
                       <xsl:text>images/</xsl:text>
-                      <xsl:value-of select="@overallCode"/>
+                      <xsl:value-of select="overallCode"/>
                       <xsl:text>.png</xsl:text>
                     </xsl:attribute>
                   </img>
@@ -186,27 +186,27 @@
                   <!-- Print weather description -->
                   <p>
                     <xsl:choose>
-                      <xsl:when test="@overallCode='cloudy'">
+                      <xsl:when test="overallCode='cloudy'">
                         <span style="color:blue">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:when test="@overallCode='thunderstorm'">
+                      <xsl:when test="overallCode='thunderstorm'">
                         <span style="color:green">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:when test="@overallCode='rain'">
+                      <xsl:when test="overallCode='rain'">
                         <span style="color:green">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:when test="@overallCode='sunny'">
+                      <xsl:when test="overallCode='sunny'">
                         <span style="color:red">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:otherwise test="@overallCode='partlySunny'">
+                      <xsl:otherwise test="overallCode='partlySunny'">
                         <span style="color:purple">
                           <xsl:value-of select="overall"/>
                         </span>
@@ -217,17 +217,17 @@
               </xsl:if>
               <!-- else display empty cell -->
               <xsl:if test="dayOfWeek!='Wed'">
-                <td align="center" bgcolor="white"></td>
+                <td align="center" width="110px" height="110px"></td>
               </xsl:if>
 
               <!-- Display weather data if dayOfWeek = "Thu" -->
               <xsl:if test="dayOfWeek='Thu'">
-                <td align="center" width="100px" height="100px">
-                  <!-- Print lowest to highest temperature -->
+                <td align="center" width="110px" height="110px">
+                  <!-- Print highest to lowest temperature -->
                   <p>
-                    <xsl:value-of select="lowest" />
-                    <xsl:text>° - </xsl:text>
                     <xsl:value-of select="highest" />
+                    <xsl:text>° - </xsl:text>
+                    <xsl:value-of select="lowest" />
                     <xsl:text>°</xsl:text>
                   </p>
   
@@ -235,7 +235,7 @@
                   <img>
                     <xsl:attribute name="src">
                       <xsl:text>images/</xsl:text>
-                      <xsl:value-of select="@overallCode"/>
+                      <xsl:value-of select="overallCode"/>
                       <xsl:text>.png</xsl:text>
                     </xsl:attribute>
                   </img>
@@ -243,27 +243,27 @@
                   <!-- Print weather description -->
                   <p>
                     <xsl:choose>
-                      <xsl:when test="@overallCode='cloudy'">
+                      <xsl:when test="overallCode='cloudy'">
                         <span style="color:blue">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:when test="@overallCode='thunderstorm'">
+                      <xsl:when test="overallCode='thunderstorm'">
                         <span style="color:green">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:when test="@overallCode='rain'">
+                      <xsl:when test="overallCode='rain'">
                         <span style="color:green">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:when test="@overallCode='sunny'">
+                      <xsl:when test="overallCode='sunny'">
                         <span style="color:red">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:otherwise test="@overallCode='partlySunny'">
+                      <xsl:otherwise test="overallCode='partlySunny'">
                         <span style="color:purple">
                           <xsl:value-of select="overall"/>
                         </span>
@@ -274,17 +274,17 @@
               </xsl:if>
               <!-- else display empty cell -->
               <xsl:if test="dayOfWeek!='Thu'">
-                <td align="center" bgcolor="white"></td>
+                <td align="center" width="110px" height="110px"></td>
               </xsl:if>
 
               <!-- Display weather data if dayOfWeek = "Fri" -->
               <xsl:if test="dayOfWeek='Fri'">
-                <td align="center" width="100px" height="100px">
-                  <!-- Print lowest to highest temperature -->
+                <td align="center" width="110px" height="110px">
+                  <!-- Print highest to lowest temperature -->
                   <p>
-                    <xsl:value-of select="lowest" />
-                    <xsl:text>° - </xsl:text>
                     <xsl:value-of select="highest" />
+                    <xsl:text>° - </xsl:text>
+                    <xsl:value-of select="lowest" />
                     <xsl:text>°</xsl:text>
                   </p>
   
@@ -292,7 +292,7 @@
                   <img>
                     <xsl:attribute name="src">
                       <xsl:text>images/</xsl:text>
-                      <xsl:value-of select="@overallCode"/>
+                      <xsl:value-of select="overallCode"/>
                       <xsl:text>.png</xsl:text>
                     </xsl:attribute>
                   </img>
@@ -300,27 +300,27 @@
                   <!-- Print weather description -->
                   <p>
                     <xsl:choose>
-                      <xsl:when test="@overallCode='cloudy'">
+                      <xsl:when test="overallCode='cloudy'">
                         <span style="color:blue">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:when test="@overallCode='thunderstorm'">
+                      <xsl:when test="overallCode='thunderstorm'">
                         <span style="color:green">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:when test="@overallCode='rain'">
+                      <xsl:when test="overallCode='rain'">
                         <span style="color:green">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:when test="@overallCode='sunny'">
+                      <xsl:when test="overallCode='sunny'">
                         <span style="color:red">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:otherwise test="@overallCode='partlySunny'">
+                      <xsl:otherwise test="overallCode='partlySunny'">
                         <span style="color:purple">
                           <xsl:value-of select="overall"/>
                         </span>
@@ -331,17 +331,17 @@
               </xsl:if>
               <!-- else display empty cell -->
               <xsl:if test="dayOfWeek!='Fri'">
-                <td align="center" bgcolor="white"></td>
+                <td align="center" width="110px" height="110px"></td>
               </xsl:if>
 
               <!-- Display weather data if dayOfWeek = "Sat" -->
               <xsl:if test="dayOfWeek='Sat'">
-                <td align="center" width="100px" height="100px">
-                  <!-- Print lowest to highest temperature -->
+                <td align="center" width="110px" height="110px">
+                  <!-- Print highest to lowest temperature -->
                   <p>
-                    <xsl:value-of select="lowest" />
-                    <xsl:text>° - </xsl:text>
                     <xsl:value-of select="highest" />
+                    <xsl:text>° - </xsl:text>
+                    <xsl:value-of select="lowest" />
                     <xsl:text>°</xsl:text>
                   </p>
   
@@ -349,7 +349,7 @@
                   <img>
                     <xsl:attribute name="src">
                       <xsl:text>images/</xsl:text>
-                      <xsl:value-of select="@overallCode"/>
+                      <xsl:value-of select="overallCode"/>
                       <xsl:text>.png</xsl:text>
                     </xsl:attribute>
                   </img>
@@ -357,27 +357,27 @@
                   <!-- Print weather description -->
                   <p>
                     <xsl:choose>
-                      <xsl:when test="@overallCode='cloudy'">
+                      <xsl:when test="overallCode='cloudy'">
                         <span style="color:blue">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:when test="@overallCode='thunderstorm'">
+                      <xsl:when test="overallCode='thunderstorm'">
                         <span style="color:green">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:when test="@overallCode='rain'">
+                      <xsl:when test="overallCode='rain'">
                         <span style="color:green">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:when test="@overallCode='sunny'">
+                      <xsl:when test="overallCode='sunny'">
                         <span style="color:red">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:otherwise test="@overallCode='partlySunny'">
+                      <xsl:otherwise test="overallCode='partlySunny'">
                         <span style="color:purple">
                           <xsl:value-of select="overall"/>
                         </span>
@@ -388,17 +388,17 @@
               </xsl:if>
               <!-- else display empty cell -->
               <xsl:if test="dayOfWeek!='Sat'">
-                <td align="center" bgcolor="white"></td>
+                <td align="center" width="110px" height="110px"></td>
               </xsl:if>
 
               <!-- Display weather data if dayOfWeek = "Sun" -->
               <xsl:if test="dayOfWeek='Sun'">
-                <td align="center" width="100px" height="100px">
-                  <!-- Print lowest to highest temperature -->
+                <td align="center" width="110px" height="110px">
+                  <!-- Print highest to lowest temperature -->
                   <p>
-                    <xsl:value-of select="lowest" />
-                    <xsl:text>° - </xsl:text>
                     <xsl:value-of select="highest" />
+                    <xsl:text>° - </xsl:text>
+                    <xsl:value-of select="lowest" />
                     <xsl:text>°</xsl:text>
                   </p>
   
@@ -406,7 +406,7 @@
                   <img>
                     <xsl:attribute name="src">
                       <xsl:text>images/</xsl:text>
-                      <xsl:value-of select="@overallCode"/>
+                      <xsl:value-of select="overallCode"/>
                       <xsl:text>.png</xsl:text>
                     </xsl:attribute>
                   </img>
@@ -414,27 +414,27 @@
                   <!-- Print weather description -->
                   <p>
                     <xsl:choose>
-                      <xsl:when test="@overallCode='cloudy'">
+                      <xsl:when test="overallCode='cloudy'">
                         <span style="color:blue">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:when test="@overallCode='thunderstorm'">
+                      <xsl:when test="overallCode='thunderstorm'">
                         <span style="color:green">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:when test="@overallCode='rain'">
+                      <xsl:when test="overallCode='rain'">
                         <span style="color:green">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:when test="@overallCode='sunny'">
+                      <xsl:when test="overallCode='sunny'">
                         <span style="color:red">
                           <xsl:value-of select="overall"/>
                         </span>
                       </xsl:when>
-                      <xsl:otherwise test="@overallCode='partlySunny'">
+                      <xsl:otherwise test="overallCode='partlySunny'">
                         <span style="color:purple">
                           <xsl:value-of select="overall"/>
                         </span>
@@ -445,7 +445,7 @@
               </xsl:if>
               <!-- else display empty cell -->
               <xsl:if test="dayOfWeek!='Sun'">
-                <td align="center" bgcolor="white"></td>
+                <td align="center" width="110px" height="110px"></td>
               </xsl:if>
             </tr>   <!-- end of one row in the table -->
           </xsl:for-each>
