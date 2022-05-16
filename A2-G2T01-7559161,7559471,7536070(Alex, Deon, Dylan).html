@@ -27,7 +27,7 @@
             padding: 15px;
         }
 
-        .partTwo table tr td.score {
+        .partTwo table tr td.scoreText {
             font-weight: bold;
             background-color: #fff2cc;
             font-size: 120%;
@@ -44,7 +44,7 @@
             background-color: #99ff99;
         }
 
-        .partTwo span.special {
+        .partTwo span.score {
             font-weight: bold;
             color: red;
             font-size: 150%;
@@ -82,8 +82,8 @@
         var timer; // Global variable to be used within different functions
 
         function alphabetMake() {
-            var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U",
-                "V", "W", "X", "Y", "Z"];
+            var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q",
+                "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
             // Randomly select a letter from the alphabet array
             var a1 = alphabet[Math.floor(Math.random() * 26)];
@@ -108,7 +108,7 @@
             document.getElementById("a3").setAttribute("onclick", "checkAlphabet3()");
             document.getElementById("count").innerHTML = "0";
             document.getElementById("start").disabled = true;
-            document.getElementById("opt").disabled = true;
+            document.getElementById("alphabetList").disabled = true;
 
             // Use alphabetMake() function to change the alphabet every one second until user presses stop button
             alphabetMake(); // To run one time immediately when start button is clicked
@@ -118,7 +118,7 @@
         function stop() {
             clearInterval(timer);
             document.getElementById("start").disabled = false;
-            document.getElementById("opt").disabled = false;
+            document.getElementById("alphabetList").disabled = false;
             document.getElementById("a1").setAttribute("onclick", "");
             document.getElementById("a2").setAttribute("onclick", "");
             document.getElementById("a3").setAttribute("onclick", "");
@@ -126,11 +126,11 @@
 
         function checkAlphabet1() {
             var a1 = document.getElementById("a1").innerHTML;
-            var opt = document.getElementById("opt").value;
+            var alphabetList = document.getElementById("alphabetList").value;
             var val = document.getElementById("count").innerHTML;
             var count = parseInt(val);
 
-            if (a1 === opt) {
+            if (a1 === alphabetList) {
                 count = count + 4;
                 document.getElementById("count").innerHTML = count;
             } else {
@@ -141,11 +141,11 @@
 
         function checkAlphabet2() {
             var a2 = document.getElementById("a2").innerHTML;
-            var opt = document.getElementById("opt").value;
+            var alphabetList = document.getElementById("alphabetList").value;
             var val = document.getElementById("count").innerHTML;
             var count = parseInt(val);
 
-            if (a2 === opt) {
+            if (a2 === alphabetList) {
                 count = count + 4;
                 document.getElementById("count").innerHTML = count;
             } else {
@@ -156,11 +156,11 @@
 
         function checkAlphabet3() {
             var a3 = document.getElementById("a3").innerHTML;
-            var opt = document.getElementById("opt").value;
+            var alphabetList = document.getElementById("alphabetList").value;
             var val = document.getElementById("count").innerHTML;
             var count = parseInt(val);
 
-            if (a3 === opt) {
+            if (a3 === alphabetList) {
                 count = count + 4;
                 document.getElementById("count").innerHTML = count;
             } else {
@@ -168,7 +168,6 @@
                 document.getElementById("count").innerHTML = count;
             }
         }
-
     </script>
 </head>
 
@@ -202,55 +201,54 @@
 
 <br><hr><br>
 
-<!--- PART 2 --->
 <div class="partTwo">
-<table border="1px solid">
-    <th colspan="3" class="heading">Part 2: Game</th>
-    <tr>
-        <td width="30%" class="blue">Your chosen alphabet:</td>
-        <td width="30%" align="center" class="blue">
-        <select id="opt">
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
-            <option value="D">D</option>
-            <option value="E">E</option>
-            <option value="F">F</option>
-            <option value="G">G</option>
-            <option value="H">H</option>
-            <option value="I">I</option>
-            <option value="J">J</option>
-            <option value="K">K</option>
-            <option value="L">L</option>
-            <option value="M">M</option>
-            <option value="N">N</option>
-            <option value="O">O</option>
-            <option value="P">P</option>
-            <option value="Q">Q</option>
-            <option value="R">R</option>
-            <option value="S">S</option>
-            <option value="T">T</option>
-            <option value="U">U</option>
-            <option value="V">V</option>
-            <option value="W">W</option>
-            <option value="X">X</option>
-            <option value="Y">Y</option>
-            <option value="Z">Z</option>
-        </select></td>
-        <td width="30%" align="center" class="score">Current Score: <span class="special" id="count">0</span></td>
-    </tr>
-    <tr class="button">
-        <td colspan="3" align="center" >
-            <input type="button" id="start" class="start" value="Start" onclick="start()">
-            <input type="button" id="stop" class="stop" value="Stop" onclick="stop()">
-        </td>
-    </tr>
-    <tr>
-        <td id="a1" class="a1" height="100px" align="center"><1<sup>st</sup> Alphabet></td>
-        <td id="a2" class="a2" height="100px" align="center"><2<sup>nd</sup> Alphabet></td>
-        <td id="a3" class="a3" height="100px" align="center"><3<sup>rd</sup> Alphabet></td>
-    </tr>
-</table>
+    <table border="1px solid">
+        <th colspan="3" class="heading">Part 2: Game</th>
+        <tr>
+            <td width="30%" class="blue">Your chosen alphabet:</td>
+            <td width="30%" align="center" class="blue">
+                <select id="alphabetList">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                    <option value="G">G</option>
+                    <option value="H">H</option>
+                    <option value="I">I</option>
+                    <option value="J">J</option>
+                    <option value="K">K</option>
+                    <option value="L">L</option>
+                    <option value="M">M</option>
+                    <option value="N">N</option>
+                    <option value="O">O</option>
+                    <option value="P">P</option>
+                    <option value="Q">Q</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                    <option value="T">T</option>
+                    <option value="U">U</option>
+                    <option value="V">V</option>
+                    <option value="W">W</option>
+                    <option value="X">X</option>
+                    <option value="Y">Y</option>
+                    <option value="Z">Z</option>
+                </select></td>
+            <td width="30%" align="center" class="scoreText">Current Score: <span class="score" id="count">0</span></td>
+        </tr>
+        <tr class="button">
+            <td colspan="3" align="center" >
+                <input type="button" id="start" class="start" value="Start" onclick="start()">
+                <input type="button" id="stop" class="stop" value="Stop" onclick="stop()">
+            </td>
+        </tr>
+        <tr>
+            <td id="a1" class="a1" height="100px" align="center"><1<sup>st</sup> Alphabet></td>
+            <td id="a2" class="a2" height="100px" align="center"><2<sup>nd</sup> Alphabet></td>
+            <td id="a3" class="a3" height="100px" align="center"><3<sup>rd</sup> Alphabet></td>
+        </tr>
+    </table>
 </div><br>
 
 </body>
