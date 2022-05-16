@@ -11,17 +11,14 @@
         .partOne td {
             padding: 5px;
         }
+
         .partTwo td {
             padding: 5px;
         }
+
         .partTwo table {
             width: 45%;
             border-collapse: collapse;
-        }
-
-        .partTwo table tr td a {
-            display: block;
-            text-decoration: none;
         }
 
         .partTwo table tr td.blue {
@@ -79,17 +76,16 @@
             color: #ff1493;
             font-size: 150%;
         }
-
     </style>
 
     <script>
-        var timer; // global variable for setInterval
+        var timer; // Global variable to be used within different functions
 
         function alphabetMake() {
             var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U",
                 "V", "W", "X", "Y", "Z"];
 
-            // change the alphabet every one second
+            // Randomly select a letter from the alphabet array
             var a1 = alphabet[Math.floor(Math.random() * 26)];
             document.getElementById("a1").innerHTML = a1;
 
@@ -107,22 +103,16 @@
         }
 
         function start() {
-                document.getElementById("a1").setAttribute("onclick", "checkAlphabet1()");
-                document.getElementById("a2").setAttribute("onclick", "checkAlphabet2()");
-                document.getElementById("a3").setAttribute("onclick", "checkAlphabet3()");
-                document.getElementById("count").innerHTML = "0";
-                document.getElementById("start").disabled = true;
-                document.getElementById("opt").disabled = true;
+            document.getElementById("a1").setAttribute("onclick", "checkAlphabet1()");
+            document.getElementById("a2").setAttribute("onclick", "checkAlphabet2()");
+            document.getElementById("a3").setAttribute("onclick", "checkAlphabet3()");
+            document.getElementById("count").innerHTML = "0";
+            document.getElementById("start").disabled = true;
+            document.getElementById("opt").disabled = true;
 
-                var i = 0;
-                // Use alphabetMake() function to change the alphabet every one second until user presses stop button
-
-                alphabetMake();
-                timer = setInterval(alphabetMake, 1000);
-
-                if (document.getElementById("stop").onclick === true) {
-                    stop();
-                }
+            // Use alphabetMake() function to change the alphabet every one second until user presses stop button
+            alphabetMake(); // To run one time immediately when start button is clicked
+            timer = setInterval(alphabetMake, 1000);
         }
 
         function stop() {
@@ -183,6 +173,7 @@
 </head>
 
 <body>
+<!--- PART 1 --->
 <div class="partOne">
     <h2>Part 1: A table reflecting group members' information</h2>
     <table border="1">
@@ -211,6 +202,7 @@
 
 <br><hr><br>
 
+<!--- PART 2 --->
 <div class="partTwo">
 <table border="1px solid">
     <th colspan="3" class="heading">Part 2: Game</th>
@@ -264,4 +256,3 @@
 
 </body>
 </html>
-
